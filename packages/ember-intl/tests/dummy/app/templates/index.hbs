@@ -1,0 +1,61 @@
+<h2>Components</h2>
+
+<h3>Format Number</h3>
+<div>{{format-number num}}</div>
+<div>{{format-number num format='EUR'}}</div>
+<div>{{format-number num style='currency' currency='USD'}}</div>
+
+{{code-snippet name='format-number.hbs'}}
+
+<h3>Format Date</h3>
+<div>{{format-date instant}}</div>
+<div>{{format-date yesterday}}</div>
+
+<h3>Format Time</h3>
+<div>{{format-time instant format='hhmmss'}}</div>
+<div>{{format-time instant hour='numeric' second='numeric' minute='numeric' hour12=false}}</div>
+
+{{code-snippet name='format-time.hbs'}}
+
+<h3>Format Relative</h3>
+<div>{{format-relative yesterday}}</div>
+<div>{{format-relative instant}}</div>
+<div>{{format-relative now interval=1000}}</div>
+
+<div>
+  {{code-snippet name='format-relative.hbs'}}
+</div>
+
+<h3>Format Message</h3>
+
+<div>
+  {{t cp
+    product='Apple watch'
+    price=200
+    deadline=yesterday}}
+</div>
+<div>
+  {{t (l messages.photos)
+    name='Jason'
+    numPhotos=num
+    takenDate=yesterday}}
+</div>
+<br />
+<button title={{t 'product.title'}}>
+  Hover to see title
+</button>
+
+{{code-snippet name='format-message.hbs'}}
+
+<h3>Format HTML Message</h3>
+<div>
+  {{format-html-message 'product.html.info'
+    product='Apple watch'
+    price=200
+    deadline=yesterday}}
+</div>
+<div>
+  {{format-html-message (l '<strong>{product}</strong>') product='Apple watch'}}
+</div>
+
+{{code-snippet name='format-html-message.hbs'}}
